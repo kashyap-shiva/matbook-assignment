@@ -1,0 +1,3 @@
+export default function Loading() {
+  return <p className="text-center text-gray-600 py-6">Loading...</p>;
+}
