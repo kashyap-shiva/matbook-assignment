@@ -9,14 +9,13 @@ const app = express();
 app.use(cors({ origin: "*" }));
 app.use(express.json());
 
-// Routes
 app.use("/api/form-schema", schemaRoutes);
 app.use("/api/submissions", submissionRoutes);
 
-// Optional: Add a health check
+// Health check (test this first)
 app.get("/", (req, res) => {
-  res.json({ message: "Matbook Assignment Backend is running!" });
+  res.json({ message: "Matbook Assignment Backend is live!" });
 });
 
-// This is what Vercel needs
-module.exports = app;
+// NO app.listen() here – Vercel handles it
+module.exports = app;  // This is REQUIRED for Vercel
