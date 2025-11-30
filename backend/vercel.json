@@ -1,14 +1,13 @@
 {
-  "builds": [
-    {
-      "src": "backend/api/index.js",
-      "use": "@vercel/node"
+  "functions": {
+    "backend/api/index.js": {
+      "runtime": "nodejs20.x"
     }
-  ],
+  },
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "backend/api/index.js"
+      "dest": "/backend/api/index.js"
     }
   ]
 }
